@@ -14,7 +14,7 @@ import io.reactivex.disposables.Disposable;
 
 import static com.quickstart.baselib.net.Constant.C_SUCCESS;
 
-public abstract class RxDefaultObserver<D> implements Observer<BaseResponse<D>> {
+public abstract class RxDefaultObserver<C> implements Observer<BaseResponse<C>> {
     private static final String TAG = "RxDefaultObserver";
     private Context mContext;
     /**
@@ -41,12 +41,12 @@ public abstract class RxDefaultObserver<D> implements Observer<BaseResponse<D>> 
     }
 
     @Override
-    public void onNext(@NonNull BaseResponse<D> dBaseResponse) {
-        if (dBaseResponse.getC() == C_SUCCESS) {
+    public void onNext(@NonNull BaseResponse<C> cBaseResponse) {
+        if (cBaseResponse.getCode() == C_SUCCESS) {
             // TODO: 2020/2/20 这里没有直接传入泛型中的D，是因为怕不只是在c==C_SUCCESS时才代表成功，以防万一吧。
-            onSuccess(dBaseResponse);
+            onSuccess(cBaseResponse);
         } else {
-            onFailure(dBaseResponse);
+            onFailure(cBaseResponse);
         }
     }
 
@@ -91,16 +91,16 @@ public abstract class RxDefaultObserver<D> implements Observer<BaseResponse<D>> 
     /**
      * 请求成功，但是返回数据失败
      *
-     * @param dBaseResponse
+     * @param cBaseResponse
      */
-    public void onFailure(BaseResponse<D> dBaseResponse) {
-        Log.d(TAG, "onFailure: " + dBaseResponse.getC());
+    public void onFailure(BaseResponse<C> cBaseResponse) {
+        Log.d(TAG, "onFailure: " + cBaseResponse.getCode());
     }
 
     /**
      * 请求成功，数据正确
      *
-     * @param dBaseResponse
+     * @param cBaseResponse
      */
-    public abstract void onSuccess(BaseResponse<D> dBaseResponse);
+    public abstract void onSuccess(BaseResponse<C> cBaseResponse);
 }
