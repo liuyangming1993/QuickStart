@@ -1,5 +1,4 @@
 package com.quickstart.baselib.net;
 
-public class BaseRequest {
-
+public interface IView {
 }

@@ -3,7 +3,12 @@ package com.quickstart.baselib.net;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+/**
+ * 提供Gson实例
+ */
 public class GsonProvider {
+    private static final String DATE_FORMAT = "yyyy-MM-dd hh:mm:ss";
+
     private GsonProvider() {
     }
 
@@ -13,7 +18,7 @@ public class GsonProvider {
 
     private static class GsonHolder {
         private static final Gson sGson = new GsonBuilder()
-                .setDateFormat("yyyy-MM-dd hh:mm:ss")
+                .setDateFormat(DATE_FORMAT)
                 .create();
     }
 }
