@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.quickstart.baselib.R;
 import com.quickstart.baselib.net.download.DownloadManager;
 
-public class TestDownloadActivity extends AppCompatActivity implements DownloadManager.ProgressListener {
+public class DownloadActivity extends AppCompatActivity implements DownloadManager.ProgressListener {
 
     private ProgressBar pb_progress;
     private TextView tv_progress;
@@ -36,7 +36,7 @@ public class TestDownloadActivity extends AppCompatActivity implements DownloadM
      * 点击开始下载
      */
     public void start(View view) {
-        downloadManager.start("https://bignoxtest.oss-cn-beijing.aliyuncs.com/mis-reminder/1576829883576-aa701d8a-3ee7-41ca.mp4");
+        downloadManager.start("");
     }
 
     /**

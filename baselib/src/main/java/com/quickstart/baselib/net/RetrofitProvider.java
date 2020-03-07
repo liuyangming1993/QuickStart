@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.quickstart.baselib.net.Constant.BASE_URL;
+import static com.quickstart.baselib.net.Config.BASE_URL;
 
 public class RetrofitProvider {
 

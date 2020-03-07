@@ -12,7 +12,7 @@ import io.reactivex.Observer;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 
-import static com.quickstart.baselib.net.Constant.C_SUCCESS;
+import static com.quickstart.baselib.net.Config.C_SUCCESS;
 
 public abstract class RxDefaultObserver<C> implements Observer<BaseResponse<C>> {
     private static final String TAG = "RxDefaultObserver";
