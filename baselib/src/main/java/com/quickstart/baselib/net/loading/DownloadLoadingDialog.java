@@ -1,4 +1,4 @@
-package com.quickstart.baselib.net.download;
+package com.quickstart.baselib.net.loading;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.quickstart.baselib.R;
-import com.quickstart.baselib.net.BaseDialogFragment;
+import com.quickstart.baselib.base.BaseDialogFragment;
 
 import java.util.Objects;
 

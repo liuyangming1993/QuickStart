@@ -1,9 +1,10 @@
-package com.quickstart.baselib.net;
+package com.quickstart.baselib.base;
 
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 
+import com.quickstart.baselib.mvp.IPresenter;
 import com.trello.rxlifecycle3.components.support.RxAppCompatActivity;
 
 import butterknife.ButterKnife;

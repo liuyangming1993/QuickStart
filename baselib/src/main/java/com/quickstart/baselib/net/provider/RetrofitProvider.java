@@ -1,4 +1,4 @@
-package com.quickstart.baselib.net;
+package com.quickstart.baselib.net.provider;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;

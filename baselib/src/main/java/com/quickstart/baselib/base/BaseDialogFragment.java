@@ -1,4 +1,4 @@
-package com.quickstart.baselib.net;
+package com.quickstart.baselib.base;
 
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentManager;

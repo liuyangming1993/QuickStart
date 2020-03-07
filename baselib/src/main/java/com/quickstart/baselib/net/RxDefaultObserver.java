@@ -4,6 +4,8 @@ import android.accounts.NetworkErrorException;
 import android.content.Context;
 import android.util.Log;
 
+import com.quickstart.baselib.net.loading.NetworkLoadingDialog;
+
 import java.net.ConnectException;
 import java.net.UnknownHostException;
 import java.util.concurrent.TimeoutException;

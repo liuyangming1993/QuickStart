@@ -1,4 +1,4 @@
-package com.quickstart.baselib;
+package com.quickstart.baselib.base;
 
 import android.app.Application;
 

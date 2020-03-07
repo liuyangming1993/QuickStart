@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.quickstart.baselib.R;
 import com.quickstart.baselib.net.download.DownloadManager;
 
 public class DownloadActivity extends AppCompatActivity implements DownloadManager.ProgressListener {
@@ -22,7 +21,7 @@ public class DownloadActivity extends AppCompatActivity implements DownloadManag
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test_download);
+        setContentView(R.layout.activity_download);
 
         pb_progress = findViewById(R.id.pb_progress);
         tv_progress = findViewById(R.id.tv_progress);

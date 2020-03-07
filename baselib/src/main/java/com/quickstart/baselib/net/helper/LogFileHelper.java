@@ -1,4 +1,4 @@
-package com.quickstart.baselib.net;
+package com.quickstart.baselib.net.helper;
 
 import android.util.Log;
 

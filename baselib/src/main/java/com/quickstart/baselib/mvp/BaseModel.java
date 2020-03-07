@@ -1,4 +1,6 @@
-package com.quickstart.baselib.net;
+package com.quickstart.baselib.mvp;
+
+import com.quickstart.baselib.net.provider.RetrofitProvider;
 
 import retrofit2.Retrofit;
 

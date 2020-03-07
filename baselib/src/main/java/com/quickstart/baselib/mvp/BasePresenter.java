@@ -1,4 +1,4 @@
-package com.quickstart.baselib.net;
+package com.quickstart.baselib.mvp;
 
 public class BasePresenter<V extends IView, M extends IModel> implements IPresenter {
     protected M mModel;

@@ -1,4 +1,4 @@
-package com.quickstart.baselib.net;
+package com.quickstart.baselib.net.provider;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

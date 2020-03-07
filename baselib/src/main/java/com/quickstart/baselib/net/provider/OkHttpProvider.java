@@ -1,4 +1,6 @@
-package com.quickstart.baselib.net;
+package com.quickstart.baselib.net.provider;
+
+import com.quickstart.baselib.net.NetworkInterceptor;
 
 import okhttp3.OkHttpClient;
 
