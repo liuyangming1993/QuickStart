@@ -1,4 +1,4 @@
-package com.quickstart.baselib.net.download.test;
+package com.lym.testmodule;
 
 import android.os.Bundle;
 import android.view.View;
@@ -24,9 +24,9 @@ public class DownloadActivity extends AppCompatActivity implements DownloadManag
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_download);
 
-        pb_progress = (ProgressBar) findViewById(R.id.pb_progress);
-        tv_progress = (TextView) findViewById(R.id.tv_progress);
-        btn_pasuse = (Button) findViewById(R.id.btn_pasuse);
+        pb_progress = findViewById(R.id.pb_progress);
+        tv_progress = findViewById(R.id.tv_progress);
+        btn_pasuse = findViewById(R.id.btn_pasuse);
 
         downloadManager = DownloadManager.getInstance().setOutFileInfo("/storage/emulated/0/Download/yaoshi.mp4");
         downloadManager.setProgressListener(this);
