@@ -10,13 +10,12 @@ import android.view.Window;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
 
 import com.quickstart.baselib.R;
 
 import java.util.Objects;
 
-public class NetworkLoadingDialog extends DialogFragment {
+public class NetworkLoadingDialog extends BaseDialogFragment {
     public static NetworkLoadingDialog getNetworkLoadingDialog() {
         // TODO: 2020/2/24 此次没有使用单例 ，是为了避免一个页面同时调用多个接口时展示多个此dialog造成异常的问题。
         NetworkLoadingDialog dialog = new NetworkLoadingDialog();
