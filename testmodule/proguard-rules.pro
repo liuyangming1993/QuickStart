@@ -203,6 +203,62 @@
     <init>(java.lang.Throwable);
 }
 
--dontwarn com.google.gson.**
--keep class com.google.gson.**{*;}
--keep interface com.google.gson.**{*;}
+# Retrofit2
+# Retain generic type information for use by reflection by converters and adapters.
+-keepattributes Signature
+# Retain service method parameters.
+-keepclassmembernames,allowobfuscation interface * {
+    @retrofit2.http.* <methods>;
+}
+# Ignore annotation used for build tooling.
+-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+
+# okhttp3
+-dontwarn okhttp3.**
+-dontwarn okio.**
+-dontwarn javax.annotation.**
+# A resource is loaded with a relative path so the package of this class must be preserved.
+-keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
+
+# Gson
+-dontwarn sun.misc.**
+#-keep class com.google.gson.stream.** { *; }
+
+# Application classes that will be serialized/deserialized over Gson
+#-keep class com.google.gson.examples.android.model.** { *; }
+#-keep class com.noxgroup.app.hunter.common.model.** { *;}
+
+# Prevent proguard from stripping interface information from TypeAdapterFactory,
+# JsonSerializer, JsonDeserializer instances (so they can be used in @JsonAdapter)
+-keep class * implements com.google.gson.TypeAdapterFactory
+-keep class * implements com.google.gson.JsonSerializer
+-keep class * implements com.google.gson.JsonDeserializer
+
+# Glide
+-keep public class * implements com.bumptech.glide.module.GlideModule
+#-keep public class * extends com.bumptech.glide.module.AppGlideModule
+-keep class * extends com.bumptech.glide.module.AppGlideModule
+-keep public enum com.bumptech.glide.load.ImageHeaderParser$** {
+  **[] $VALUES;
+  public *;
+}
+#glide如果你的API级别<=Android API 27 则需要添加
+-dontwarn com.bumptech.glide.load.resource.bitmap.VideoDecoder
+# for DexGuard only
+#-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
+
+#-keep class com.bumptech.glide.GeneratedAppGlideModuleImpl 或 -keep class * extends com.bumptech.glide.module.AppGlideModule（去掉public）
+#解决报错：
+#GeneratedAppGlideModuleImpl is implemented incorrectly. If you've manually implemented this class, remove your implementation. The Annotation processor will generate a correct implementation.
+
+# GreenDao
+#-keep class org.greenrobot.**{*;}
+#-keepclassmembers class * extends org.greenrobot.greendao.AbstractDao {
+#public static java.lang.String TABLENAME;
+#}
+#-keep class **$Properties
+-dontwarn org.greenrobot.**
+-keepclassmembers class com.noxgroup.app.noxmemory.common.network.response.**{ *; }
+-keep class com.mcxtzhang.swipemenulib.SwipeMenuLayout {
+    private <fields>;
+}
