@@ -27,15 +27,16 @@ public class DownloadActivity extends AppCompatActivity implements DownloadManag
         tv_progress = findViewById(R.id.tv_progress);
         btn_pasuse = findViewById(R.id.btn_pasuse);
 
-        downloadManager = DownloadManager.getInstance().setOutFileInfo("/storage/emulated/0/Download/AndroidManifest.xml");
+        downloadManager = DownloadManager.getInstance().setOutFileInfo("/storage/emulated/0/Download/data.json");
         downloadManager.setProgressListener(this);
+        new TestModel().getJson();
     }
 
     /**
      * 点击开始下载
      */
     public void start(View view) {
-        downloadManager.start("https://raw.githubusercontent.com/liuyangming1993/QuickStart/master/app/src/main/AndroidManifest.xml");
+        downloadManager.start("https://gitee.com/will20151115/BeautyChecker/raw/master/data.json");
     }
 
     /**
