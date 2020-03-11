@@ -5,7 +5,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bumptech.glide.Glide;
+import com.quickstart.baselib.util.ImageUtil;
 
 import butterknife.ButterKnife;
 
@@ -17,6 +17,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         ImageView iv = findViewById(R.id.iv);
-        Glide.with(this).load("https://raw.githubusercontent.com/liuyangming1993/BlogPic/master/1.png").into(iv);
+        ImageUtil.show(this, "https://raw.githubusercontent.com/liuyangming1993/BlogPic/master/1.png", iv);
     }
 }
