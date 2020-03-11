@@ -52,6 +52,7 @@ dependencies {
     //Glide
     api rootProject.ext.dependencies.glide
     annotationProcessor rootProject.ext.dependencies.glide_compiler
+    api rootProject.ext.dependencies.okhttp3_integration
     //EventBus
     api rootProject.ext.dependencies.eventbus
     //Butterknife
