@@ -77,7 +77,7 @@ public abstract class RxDefaultObserver<C> implements Observer<BaseResponse<C>> 
      */
     private void isDismissLoadingNecessary() {
         if (mHasLoading) {
-            mNetworkLoadingDialog.dismiss();
+            mNetworkLoadingDialog.dismissAllowingStateLoss();
         }
     }
 
