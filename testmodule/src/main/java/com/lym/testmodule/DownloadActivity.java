@@ -27,7 +27,7 @@ public class DownloadActivity extends AppCompatActivity implements DownloadManag
         tv_progress = findViewById(R.id.tv_progress);
         btn_pasuse = findViewById(R.id.btn_pasuse);
 
-        downloadManager = DownloadManager.getInstance().setOutFileInfo("/storage/emulated/0/Download/data.json");
+        downloadManager = DownloadManager.getInstance().setOutFileInfo("/storage/emulated/0/Download/app-debug.apk");
         downloadManager.setProgressListener(this);
         new TestModel().getJson();
     }
@@ -36,7 +36,8 @@ public class DownloadActivity extends AppCompatActivity implements DownloadManag
      * 点击开始下载
      */
     public void start(View view) {
-        downloadManager.start("https://gitee.com/will20151115/BeautyChecker/raw/master/data.json");
+//        downloadManager.start("https://gitee.com/will20151115/BeautyChecker/raw/master/data.json");
+        downloadManager.start("https://gitee.com/will20151115/BeautyChecker/blob/master/app-debug.apk");
     }
 
     /**
