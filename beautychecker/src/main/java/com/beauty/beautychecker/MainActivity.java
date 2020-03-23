@@ -4,7 +4,6 @@ import com.beauty.beautychecker.mvp.contract.MainContract;
 import com.beauty.beautychecker.mvp.m.MainModel;
 import com.beauty.beautychecker.mvp.p.MainPresenter;
 import com.quickstart.baselib.base.BaseActivity;
-import com.quickstart.baselib.update.UpdateHelper;
 
 public class MainActivity extends BaseActivity<MainPresenter> implements MainContract.MainView {
 

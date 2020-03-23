@@ -15,10 +15,8 @@ import io.reactivex.Observer;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 
-import static com.quickstart.baselib.net.Config.C_SUCCESS;
-
-public abstract class RxDefaultObserver<C> implements Observer<BaseResponse<C>> {
-    private static final String TAG = "RxDefaultObserver";
+public abstract class RxThirdPartObserver<D> implements Observer<D> {
+    private static final String TAG = "RxThirdPartObserver";
     private Context mContext;
     /**
      * 是否需要loading
@@ -26,7 +24,7 @@ public abstract class RxDefaultObserver<C> implements Observer<BaseResponse<C>> 
     private boolean mHasLoading;
     private NetworkLoadingDialog mNetworkLoadingDialog;
 
-    public RxDefaultObserver(Context context, boolean hasLoading) {
+    public RxThirdPartObserver(Context context, boolean hasLoading) {
         mContext = context;
         mHasLoading = hasLoading;
         if (hasLoading) {
@@ -34,7 +32,7 @@ public abstract class RxDefaultObserver<C> implements Observer<BaseResponse<C>> 
         }
     }
 
-    public RxDefaultObserver(Context context) {
+    public RxThirdPartObserver(Context context) {
         this(context, true);
     }
 
@@ -44,12 +42,11 @@ public abstract class RxDefaultObserver<C> implements Observer<BaseResponse<C>> 
     }
 
     @Override
-    public void onNext(@NonNull BaseResponse<C> cBaseResponse) {
-        if (cBaseResponse.getCode() == C_SUCCESS) {
-            // TODO: 2020/2/20 这里没有直接传入泛型中的D，是因为怕不只是在c==C_SUCCESS时才代表成功，以防万一吧。
-            onSuccess(cBaseResponse);
+    public void onNext(@NonNull D response) {
+        if (isSuccess(response)) {
+            onSuccess(response);
         } else {
-            onFailure(cBaseResponse);
+            onFailure(response);
         }
     }
 
@@ -94,16 +91,23 @@ public abstract class RxDefaultObserver<C> implements Observer<BaseResponse<C>> 
     /**
      * 请求成功，但是返回数据失败
      *
-     * @param cBaseResponse
+     * @param response
      */
-    public void onFailure(BaseResponse<C> cBaseResponse) {
-        Log.d(TAG, "onFailure: " + cBaseResponse.getCode());
+    public void onFailure(D response) {
     }
 
     /**
      * 请求成功，数据正确
      *
-     * @param cBaseResponse
+     * @param response
      */
-    public abstract void onSuccess(BaseResponse<C> cBaseResponse);
+    public abstract void onSuccess(D response);
+
+    /**
+     * 返回是否成功
+     *
+     * @param response
+     * @return
+     */
+    public abstract boolean isSuccess(D response);
 }
