@@ -32,10 +32,4 @@ public class NetworkLoadingDialog extends BaseDialogFragment {
         View view = inflater.inflate(R.layout.dialog_network_loading, container, false);
         return view;
     }
-
-    public void show(Context context) {
-        if (context instanceof AppCompatActivity) {
-            show(((AppCompatActivity) context).getSupportFragmentManager(), "");
-        }
-    }
 }

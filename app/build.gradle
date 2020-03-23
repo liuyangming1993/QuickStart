@@ -30,7 +30,8 @@ dependencies {
         implementation project(':baselib')
     } else {
         implementation project(':baselib')
-        implementation project(':testmodule')
+//        implementation project(':testmodule')
+        implementation project(':beautychecker')
     }
 }
 
