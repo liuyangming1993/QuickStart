@@ -48,8 +48,9 @@ dependencies {
     api rootProject.ext.dependencies.rxlifecycle
     api rootProject.ext.dependencies.rxlifecycle_android
     api rootProject.ext.dependencies.rxlifecycle_components
-    //Rv适配器
+    //Rv
     api rootProject.ext.dependencies.baseRecyclerViewAdapterHelper
+    api rootProject.ext.dependencies.recyclerView
     //Glide
     api rootProject.ext.dependencies.glide
     annotationProcessor rootProject.ext.dependencies.glide_compiler

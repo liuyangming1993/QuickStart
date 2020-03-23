@@ -17,6 +17,7 @@ ext {
             retrofit: "2.7.0",
             rxlifecycle: "3.1.0",
             baseRecyclerViewAdapterHelper: "2.9.47",
+            recyclerView: "1.2.0-alpha01",
             glide: "4.10.0",
             eventbus: "3.2.0",
             butterknife: "10.2.1",
@@ -45,6 +46,7 @@ ext {
             "rxlifecycle_components"        : "com.trello.rxlifecycle3:rxlifecycle-components:${dependVersion.rxlifecycle}",
             //Rv适配器
             "baseRecyclerViewAdapterHelper" : "com.github.CymChad:BaseRecyclerViewAdapterHelper:${dependVersion.baseRecyclerViewAdapterHelper}",
+            "recyclerView"                  : "androidx.recyclerview:recyclerview:${dependVersion.recyclerView}",
             //Glide
             "glide"                         : "com.github.bumptech.glide:glide:${dependVersion.glide}",
             "glide_compiler"                : "com.github.bumptech.glide:compiler:${dependVersion.glide}",
