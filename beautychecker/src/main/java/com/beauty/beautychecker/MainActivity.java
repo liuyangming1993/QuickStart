@@ -1,5 +1,7 @@
 package com.beauty.beautychecker;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.beauty.beautychecker.mvp.contract.MainContract;
 import com.beauty.beautychecker.mvp.m.MainModel;
 import com.beauty.beautychecker.mvp.p.MainPresenter;
@@ -12,6 +14,8 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
 
     @BindView(R2.id.ct)
     CommonToolbar ct;
+    @BindView(R2.id.rv)
+    RecyclerView rv;
 
     @Override
     protected int getLayoutId() {
@@ -25,6 +29,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
 
     @Override
     public void initView() {
+
     }
 
     @Override
