@@ -1,5 +1,6 @@
 package com.quickstart.baselib.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -8,10 +9,13 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.annotation.IdRes;
+
 import com.quickstart.baselib.R;
 import com.quickstart.baselib.base.BaseActivity;
 
 public class CommonToolbar extends RelativeLayout {
+    private Context mContext;
     private ImageView mIvLeft;
     private TextView mTvTitle;
     private RelativeLayout mRl;
@@ -26,7 +30,8 @@ public class CommonToolbar extends RelativeLayout {
 
     public CommonToolbar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        initView(context);
+        mContext = context;
+        initView();
         initListener();
     }
 
@@ -38,9 +43,18 @@ public class CommonToolbar extends RelativeLayout {
         });
     }
 
-    private void initView(Context context) {
-        mRl = (RelativeLayout) LayoutInflater.from(context).inflate(R.layout.view_common_toolbar, this, true);
+    private void initView() {
+        mRl = (RelativeLayout) LayoutInflater.from(mContext).inflate(R.layout.view_common_toolbar, this, true);
         mIvLeft = mRl.findViewById(R.id.iv_left);
         mTvTitle = mRl.findViewById(R.id.tv_title);
+    }
+
+    public void setTitle(String title) {
+        mTvTitle.setText(title);
+    }
+
+    @SuppressLint("ResourceType")
+    public void setTitle(@IdRes int titleRes) {
+        mTvTitle.setText(mContext.getText(titleRes));
     }
 }

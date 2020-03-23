@@ -54,5 +54,6 @@ ext {
             //Butterknife
             "butterknife"                   : "com.jakewharton:butterknife:${dependVersion.butterknife}",
             "butterknife_compiler"          : "com.jakewharton:butterknife-compiler:${dependVersion.butterknife}",
+            "butterknife_gradle_plugin"     : "com.jakewharton:butterknife-gradle-plugin:${dependVersion.butterknife}"
     ]
 }

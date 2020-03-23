@@ -1,3 +1,4 @@
+apply plugin: 'com.jakewharton.butterknife'
 if (isModule.toBoolean()) {
     apply plugin: 'com.android.application'
 } else {
@@ -47,4 +48,5 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':baselib')
+    annotationProcessor rootProject.ext.dependencies.butterknife_compiler
 }
