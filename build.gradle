@@ -5,6 +5,8 @@ buildscript {
         google()
         jcenter()
         mavenCentral()
+        //友盟
+        maven { url 'https://dl.bintray.com/umsdk/release' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.1'
@@ -21,6 +23,8 @@ allprojects {
         jcenter()
         //使用BaseRecyclerViewAdapterHelper
         maven { url "https://jitpack.io" }
+        //友盟
+        maven { url 'https://dl.bintray.com/umsdk/release' }
     }
 }
 
