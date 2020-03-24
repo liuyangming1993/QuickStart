@@ -103,4 +103,14 @@ public class AppUtil {
         Bitmap bm = bd.getBitmap();
         return bm;
     }
+
+    private static String getMetadata(Context context, String key) {
+        String value = "";
+        try {
+            value = context.getPackageManager().getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA).metaData.getString(key);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return value;
+    }
 }
