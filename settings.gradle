@@ -1,4 +1,1 @@
-include ':app', ':beautycheckerapp',
-        ':baselib',
-        ':beautychecker',
-        ':testmodule'
+include /*':app', ':testmodule', */':beautycheckerapp', ':baselib', ':beautychecker'
