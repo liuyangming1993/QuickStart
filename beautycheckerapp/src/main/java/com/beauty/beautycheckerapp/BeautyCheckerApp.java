@@ -4,6 +4,8 @@ import com.quickstart.baselib.base.BaseApplication;
 import com.umeng.commonsdk.UMConfigure;
 
 public class BeautyCheckerApp extends BaseApplication {
+    private static final String TAG = "BeautyCheckerApp";
+
     @Override
     public void onCreate() {
         super.onCreate();

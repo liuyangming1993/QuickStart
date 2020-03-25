@@ -7,6 +7,6 @@ import io.reactivex.Observable;
 import retrofit2.http.GET;
 
 public interface UpdateApi {
-    @GET("raw/master/checkVerson.json")
+    @GET("raw/master/beauty/checkVerson.json")
     Observable<BaseResponse<UpdateResponse>> checkVersion();
 }
