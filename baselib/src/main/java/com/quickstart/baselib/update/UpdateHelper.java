@@ -5,6 +5,9 @@ import android.content.Context;
 import com.quickstart.baselib.update.entity.UpdateResponse;
 import com.quickstart.baselib.util.AppUtil;
 
+/**
+ * 检测是否需要更新，使用方式：UpdateHelper.getInstance(context).check();
+ */
 public class UpdateHelper implements UpdateContract.UpdateView {
 
     private Context mContext;

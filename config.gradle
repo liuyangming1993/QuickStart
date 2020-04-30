@@ -21,6 +21,7 @@ ext {
             glide: "4.10.0",
             eventbus: "3.2.0",
             butterknife: "10.2.1",
+            greendao: "3.2.2"
     ]
 
     dependencies = [
@@ -57,6 +58,8 @@ ext {
             //Butterknife
             "butterknife"                   : "com.jakewharton:butterknife:${dependVersion.butterknife}",
             "butterknife_compiler"          : "com.jakewharton:butterknife-compiler:${dependVersion.butterknife}",
-            "butterknife_gradle_plugin"     : "com.jakewharton:butterknife-gradle-plugin:${dependVersion.butterknife}"
+            "butterknife_gradle_plugin"     : "com.jakewharton:butterknife-gradle-plugin:${dependVersion.butterknife}",
+            //GreenDAO
+            "greendao"                   : "org.greenrobot:greendao:${dependVersion.greendao}"
     ]
 }

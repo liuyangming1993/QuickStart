@@ -43,11 +43,4 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
     public void loadData() {
         mPresenter.checkVersion(this);
     }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
 }
