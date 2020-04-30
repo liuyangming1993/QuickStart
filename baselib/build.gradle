@@ -55,7 +55,7 @@ dependencies {
     api rootProject.ext.dependencies.glide
     annotationProcessor rootProject.ext.dependencies.glide_compiler
     api rootProject.ext.dependencies.okhttp3_integration
-    implementation 'jp.wasabeef:glide-transformations:2.0.1'
+    api rootProject.ext.dependencies.glide_transformations
     //EventBus
     api rootProject.ext.dependencies.eventbus
     //Butterknife

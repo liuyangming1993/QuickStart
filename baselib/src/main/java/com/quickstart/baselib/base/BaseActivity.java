@@ -8,15 +8,17 @@ import com.quickstart.baselib.mvp.IPresenter;
 import com.trello.rxlifecycle3.components.support.RxAppCompatActivity;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 public abstract class BaseActivity<P extends IPresenter> extends RxAppCompatActivity {
     protected P mPresenter;
+    private Unbinder mUnbinder;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
-        ButterKnife.bind(this);
+        mUnbinder = ButterKnife.bind(this);
         initVariable();
         initView();
         initListener();
@@ -39,6 +41,9 @@ public abstract class BaseActivity<P extends IPresenter> extends RxAppCompatActi
         if (mPresenter != null) {
             mPresenter.onDestroy();
             mPresenter = null;
+        }
+        if (mUnbinder != null) {
+            mUnbinder.unbind();
         }
     }
 }

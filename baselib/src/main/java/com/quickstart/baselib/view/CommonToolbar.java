@@ -20,6 +20,15 @@ public class CommonToolbar extends RelativeLayout {
     private TextView mTvTitle;
     private RelativeLayout mRl;
 
+    private OnClickListener mDefaultBackIvListener = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (v.getContext() instanceof BaseActivity) {
+                ((BaseActivity) v.getContext()).onBackPressed();
+            }
+        }
+    };
+
     public CommonToolbar(Context context) {
         this(context, null, 0);
     }
@@ -36,11 +45,8 @@ public class CommonToolbar extends RelativeLayout {
     }
 
     private void initListener() {
-        mIvLeft.setOnClickListener(v -> {
-            if (v.getContext() instanceof BaseActivity) {
-                ((BaseActivity) v.getContext()).finish();
-            }
-        });
+        //默认做返回操作
+        mIvLeft.setOnClickListener(mDefaultBackIvListener);
     }
 
     private void initView() {

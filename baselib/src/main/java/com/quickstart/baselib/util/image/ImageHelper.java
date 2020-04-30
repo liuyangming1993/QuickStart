@@ -1,4 +1,4 @@
-package com.quickstart.baselib.util;
+package com.quickstart.baselib.util.image;
 
 import android.content.Context;
 import android.widget.ImageView;
