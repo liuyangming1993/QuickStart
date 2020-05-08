@@ -9,4 +9,8 @@ public class ImageHelper {
     public static void show(Context context, String url, ImageView iv) {
         GlideApp.with(context).load(url).into(iv);
     }
+
+    public static void test(Context context, String url, ImageView iv) {
+        GlideApp.with(context).load(url).into(iv);
+    }
 }

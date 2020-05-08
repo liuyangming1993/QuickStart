@@ -1,7 +1,5 @@
 package com.horoscope.horoscope;
 
-import android.os.Bundle;
-
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.horoscope.horoscope.mvp.contract.MainContract;
@@ -11,7 +9,6 @@ import com.quickstart.baselib.base.BaseActivity;
 import com.quickstart.baselib.view.CommonToolbar;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity<MainPresenter> implements MainContract.MainView {
 
@@ -32,7 +29,6 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
 
     @Override
     public void initView() {
-
     }
 
     @Override
