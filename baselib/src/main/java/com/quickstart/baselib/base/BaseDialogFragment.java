@@ -46,4 +46,9 @@ public class BaseDialogFragment extends DialogFragment {
             show(((AppCompatActivity) context).getSupportFragmentManager(), "");
         }
     }
+
+    @Override
+    public void dismiss() {
+        dismissAllowingStateLoss();
+    }
 }

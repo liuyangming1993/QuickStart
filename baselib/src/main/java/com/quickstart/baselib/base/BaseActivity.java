@@ -7,6 +7,8 @@ import androidx.annotation.Nullable;
 import com.quickstart.baselib.mvp.IPresenter;
 import com.trello.rxlifecycle3.components.support.RxAppCompatActivity;
 
+import org.greenrobot.eventbus.EventBus;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -44,6 +46,15 @@ public abstract class BaseActivity<P extends IPresenter> extends RxAppCompatActi
         }
         if (mUnbinder != null) {
             mUnbinder.unbind();
+        }
+        if (EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().unregister(this);
+        }
+    }
+
+    protected void useEventbus(boolean use) {
+        if (use) {
+            EventBus.getDefault().register(this);
         }
     }
 }

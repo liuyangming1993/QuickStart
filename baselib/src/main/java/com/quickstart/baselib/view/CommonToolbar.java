@@ -1,6 +1,5 @@
 package com.quickstart.baselib.view;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -9,8 +8,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.annotation.IdRes;
-
 import com.quickstart.baselib.R;
 import com.quickstart.baselib.base.BaseActivity;
 
@@ -18,6 +15,8 @@ public class CommonToolbar extends RelativeLayout {
     private Context mContext;
     private ImageView mIvLeft;
     private TextView mTvTitle;
+    private ImageView mIvRight1;
+    private ImageView mIvRight2;
     private RelativeLayout mRl;
 
     private OnClickListener mDefaultBackIvListener = new OnClickListener() {
@@ -53,14 +52,27 @@ public class CommonToolbar extends RelativeLayout {
         mRl = (RelativeLayout) LayoutInflater.from(mContext).inflate(R.layout.view_common_toolbar, this, true);
         mIvLeft = mRl.findViewById(R.id.iv_left);
         mTvTitle = mRl.findViewById(R.id.tv_title);
+        mIvRight1 = mRl.findViewById(R.id.iv_right1);
+        mIvRight2 = mRl.findViewById(R.id.iv_right2);
     }
 
-    public void setTitle(String title) {
-        mTvTitle.setText(title);
+    public ImageView getIvLeft() {
+        return mIvLeft;
     }
 
-    @SuppressLint("ResourceType")
-    public void setTitle(@IdRes int titleRes) {
-        mTvTitle.setText(mContext.getText(titleRes));
+    public TextView getTvTitle() {
+        return mTvTitle;
+    }
+
+    public ImageView getIvRight1() {
+        return mIvRight1;
+    }
+
+    public ImageView getIvRight2() {
+        return mIvRight2;
+    }
+
+    public RelativeLayout getRl() {
+        return mRl;
     }
 }

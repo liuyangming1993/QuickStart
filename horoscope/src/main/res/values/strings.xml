@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">BeautyChecker</string>
+    <string name="lucky_diary">Lucky Diary</string>
+    <string name="nickname">昵称</string>
+    <string name="setting">设置</string>
+    <string name="about_us">关于我们</string>
+    <string name="share_app">推荐给朋友</string>
+
 </resources>
