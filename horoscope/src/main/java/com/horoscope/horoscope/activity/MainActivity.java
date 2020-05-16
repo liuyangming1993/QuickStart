@@ -40,8 +40,6 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
 
     @BindView(R2.id.ct)
     CommonToolbar ct;
-    @BindView(R2.id.rv)
-    RecyclerView rv;
     @BindView(R2.id.rl_main)
     RelativeLayout rlMain;
     @BindView(R2.id.ll_drawer)
@@ -62,7 +60,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
 
     @Override
     public void initVariable() {
-        useEventbus(true);
+        useEventBus(true);
         mPresenter = new MainPresenter(this, new MainModel());
         mTypeSelectDialog = TypeSelectDialog.getTypeSelectDialog();
         mCreateTypeDialog = CreateTypeDialog.getCreateTypeDialog();
@@ -75,8 +73,8 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
     @Override
     public void initView() {
         ct.getTvTitle().setText(R.string.lucky_diary);
-        rv.setLayoutManager(new LinearLayoutManager(this));
-        rv.setAdapter(mDiaryAdapter);
+//        rv.setLayoutManager(new LinearLayoutManager(this));
+//        rv.setAdapter(mDiaryAdapter);
     }
 
     @Override

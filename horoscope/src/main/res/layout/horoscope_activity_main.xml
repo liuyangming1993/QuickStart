@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/dl"
     android:layout_width="match_parent"
@@ -16,11 +17,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv"
+        <com.flyco.tablayout.SlidingTabLayout
+            android:id="@+id/stl"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/ct" />
+            android:layout_height="48dp"
+            android:layout_below="@id/ct"
+            android:background="#3F9FE0"
+            tl:tl_textAllCaps="true"
+            tl:tl_textBold="BOTH"
+            tl:tl_textsize="14sp" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/stl" />
     </RelativeLayout>
 
     <LinearLayout

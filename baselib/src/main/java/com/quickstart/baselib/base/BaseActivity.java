@@ -52,7 +52,7 @@ public abstract class BaseActivity<P extends IPresenter> extends RxAppCompatActi
         }
     }
 
-    protected void useEventbus(boolean use) {
+    protected void useEventBus(boolean use) {
         if (use) {
             EventBus.getDefault().register(this);
         }
