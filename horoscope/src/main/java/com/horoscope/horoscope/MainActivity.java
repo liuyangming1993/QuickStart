@@ -1,14 +1,20 @@
 package com.horoscope.horoscope;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.horoscope.horoscope.adapter.MainDiaryAdapter;
+import com.horoscope.horoscope.adapter.MainTodoListAdapter;
+import com.horoscope.horoscope.dialog.CreateTypeDialog;
+import com.horoscope.horoscope.dialog.TypeSelectDialog;
+import com.horoscope.horoscope.entity.DiaryBean;
+import com.horoscope.horoscope.entity.TodoListBean;
 import com.horoscope.horoscope.entity.event.AddTypeEvent;
 import com.horoscope.horoscope.entity.event.ChooseTypeEvent;
 import com.horoscope.horoscope.mvp.contract.MainContract;
@@ -20,7 +26,13 @@ import com.quickstart.baselib.view.CommonToolbar;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
+
+import static com.horoscope.horoscope.Constant.TYPE_DIARY;
+import static com.horoscope.horoscope.Constant.TYPE_TODO_LIST;
 
 public class MainActivity extends BaseActivity<MainPresenter> implements MainContract.MainView {
 
@@ -36,6 +48,10 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
     DrawerLayout dl;
     private TypeSelectDialog mTypeSelectDialog;
     private CreateTypeDialog mCreateTypeDialog;
+    private MainDiaryAdapter mDiaryAdapter;
+    private List<DiaryBean> mDiaryBeanList;
+    private MainTodoListAdapter mTodoListAdapter;
+    private List<TodoListBean> mTodoListBeanList;
 
     @Override
     protected int getLayoutId() {
@@ -48,11 +64,17 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
         mPresenter = new MainPresenter(this, new MainModel());
         mTypeSelectDialog = TypeSelectDialog.getTypeSelectDialog();
         mCreateTypeDialog = CreateTypeDialog.getCreateTypeDialog();
+        mDiaryBeanList = new ArrayList<>();
+        mDiaryAdapter = new MainDiaryAdapter(R.layout.horoscope_item_rv_main_diary, mDiaryBeanList);
+        mTodoListBeanList = new ArrayList<>();
+        mTodoListAdapter = new MainTodoListAdapter(R.layout.horoscope_item_rv_main_todolist, mTodoListBeanList);
     }
 
     @Override
     public void initView() {
         ct.getTvTitle().setText(R.string.lucky_diary);
+        rv.setLayoutManager(new LinearLayoutManager(this));
+        rv.setAdapter(mDiaryAdapter);
     }
 
     @Override
@@ -74,6 +96,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
     @Override
     public void loadData() {
         mPresenter.checkVersion(this);
+        mPresenter.checkFirstLaunch(this);
     }
 
     private void changeDrawerState() {
@@ -104,6 +127,35 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void getAddTypeEvent(AddTypeEvent event) {
-        // TODO: 2020/5/12 创建日记表或者todo列表
+        if (event.type == TYPE_DIARY) {
+            mPresenter.createDiary(this, event.name);
+        }
+        if (event.type == TYPE_TODO_LIST) {
+            mPresenter.createTodoList(this, event.name);
+        }
+    }
+
+    @Override
+    public void createDiarySuccess(String diaryName) {
+        mPresenter.getDiaries(this);
+    }
+
+    @Override
+    public void createTodoListSuccess(String title) {
+        mPresenter.getTodoLists(this);
+    }
+
+    @Override
+    public void showDiaries(List<DiaryBean> list) {
+        mDiaryBeanList.clear();
+        mDiaryBeanList.addAll(list);
+        mDiaryAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void showTodoLists(List<TodoListBean> list) {
+        mTodoListBeanList.clear();
+        mTodoListBeanList.addAll(list);
+        mTodoListAdapter.notifyDataSetChanged();
     }
 }

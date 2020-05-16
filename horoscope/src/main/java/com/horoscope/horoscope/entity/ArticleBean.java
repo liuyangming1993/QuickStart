@@ -7,7 +7,7 @@ import org.greenrobot.greendao.annotation.Generated;
 
 @Entity(nameInDb = "article")
 public class ArticleBean {
-    @Id
+    @Id(autoincrement = true)
     @NotNull
     private Long id;
     /**

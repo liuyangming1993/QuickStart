@@ -1,19 +1,22 @@
-package com.horoscope.horoscope;
+package com.horoscope.horoscope.dialog;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.horoscope.horoscope.R;
 import com.horoscope.horoscope.entity.event.ChooseTypeEvent;
 import com.quickstart.baselib.base.BaseDialogFragment;
 
 import org.greenrobot.eventbus.EventBus;
+
+import static com.horoscope.horoscope.Constant.TYPE_DIARY;
+import static com.horoscope.horoscope.Constant.TYPE_TODO_LIST;
 
 public class TypeSelectDialog extends BaseDialogFragment {
     public static TypeSelectDialog getTypeSelectDialog() {
@@ -30,14 +33,14 @@ public class TypeSelectDialog extends BaseDialogFragment {
         rlDiary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EventBus.getDefault().post(new ChooseTypeEvent(ChooseTypeEvent.TYPE_DIARY));
+                EventBus.getDefault().post(new ChooseTypeEvent(TYPE_DIARY));
                 dismiss();
             }
         });
         rlTodoList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EventBus.getDefault().post(new ChooseTypeEvent(ChooseTypeEvent.TYPE_TODO_LIST));
+                EventBus.getDefault().post(new ChooseTypeEvent(TYPE_TODO_LIST));
                 dismiss();
             }
         });

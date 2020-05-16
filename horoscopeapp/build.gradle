@@ -30,6 +30,7 @@ greendao {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.0'
     if (isModule.toBoolean()) {
         implementation project(':baselib')
     } else {

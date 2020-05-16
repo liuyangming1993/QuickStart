@@ -7,7 +7,7 @@ import org.greenrobot.greendao.annotation.Generated;
 
 @Entity(nameInDb = "todo_list")
 public class TodoListBean {
-    @Id
+    @Id(autoincrement = true)
     @NotNull
     private Long id;
     /**
