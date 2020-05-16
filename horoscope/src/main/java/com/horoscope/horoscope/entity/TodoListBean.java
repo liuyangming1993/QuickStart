@@ -1,14 +1,13 @@
 package com.horoscope.horoscope.entity;
 
 import org.greenrobot.greendao.annotation.Entity;
+import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.NotNull;
-import org.greenrobot.greendao.annotation.Generated;
 
 @Entity(nameInDb = "todo_list")
 public class TodoListBean {
     @Id(autoincrement = true)
-    @NotNull
     private Long id;
     /**
      * 标题

@@ -1,14 +1,12 @@
 package com.horoscope.horoscope.entity;
 
 import org.greenrobot.greendao.annotation.Entity;
-import org.greenrobot.greendao.annotation.Id;
-import org.greenrobot.greendao.annotation.NotNull;
 import org.greenrobot.greendao.annotation.Generated;
+import org.greenrobot.greendao.annotation.Id;
 
 @Entity(nameInDb = "diary")
 public class DiaryBean {
     @Id(autoincrement = true)
-    @NotNull
     private Long id;
     /**
      * 日记本名
@@ -22,9 +20,8 @@ public class DiaryBean {
      * 创建人
      */
     private Long createUser;
-    @Generated(hash = 1673327307)
-    public DiaryBean(@NotNull Long id, String diaryName, Long createTime,
-            Long createUser) {
+    @Generated(hash = 932956024)
+    public DiaryBean(Long id, String diaryName, Long createTime, Long createUser) {
         this.id = id;
         this.diaryName = diaryName;
         this.createTime = createTime;

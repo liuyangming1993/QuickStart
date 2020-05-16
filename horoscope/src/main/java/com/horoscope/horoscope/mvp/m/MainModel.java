@@ -42,7 +42,6 @@ public class MainModel extends BaseModel implements MainContract.MainModel {
     @Override
     public Observable<Long> createDiary(Context context, String diaryName) {
         DiaryBean diaryBean = new DiaryBean();
-        diaryBean.setId(Long.valueOf(1L));
         diaryBean.setDiaryName(diaryName);
         diaryBean.setCreateUser(USER_ID);
         diaryBean.setCreateTime(System.currentTimeMillis());
