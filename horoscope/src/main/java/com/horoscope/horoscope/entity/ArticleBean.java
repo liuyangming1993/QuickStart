@@ -8,7 +8,6 @@ import org.greenrobot.greendao.annotation.Generated;
 @Entity(nameInDb = "article")
 public class ArticleBean {
     @Id(autoincrement = true)
-    @NotNull
     private Long id;
     /**
      * 日记本id
@@ -74,8 +73,8 @@ public class ArticleBean {
      * 创建人
      */
     private Long createUser;
-    @Generated(hash = 970484909)
-    public ArticleBean(@NotNull Long id, Long diaryId, String title, String content,
+    @Generated(hash = 1804439659)
+    public ArticleBean(Long id, Long diaryId, String title, String content,
             String weather, String mood, String location, Long dateTime,
             String timezoneId, String beginImage, String endImage, String horoscope,
             boolean hasHoroscope, String themeUrl, float themeAlpha,

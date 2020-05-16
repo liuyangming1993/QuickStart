@@ -21,9 +21,8 @@ public class TodoListBean {
      * 创建人
      */
     private Long createUser;
-    @Generated(hash = 448245965)
-    public TodoListBean(@NotNull Long id, String title, Long createTime,
-            Long createUser) {
+    @Generated(hash = 290215795)
+    public TodoListBean(Long id, String title, Long createTime, Long createUser) {
         this.id = id;
         this.title = title;
         this.createTime = createTime;

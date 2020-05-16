@@ -8,7 +8,6 @@ import org.greenrobot.greendao.annotation.Generated;
 @Entity(nameInDb = "todo")
 public class TodoBean {
     @Id(autoincrement = true)
-    @NotNull
     private Long id;
     /**
      * todo列表id
@@ -34,9 +33,9 @@ public class TodoBean {
      * 创建人
      */
     private Long createUser;
-    @Generated(hash = 630990449)
-    public TodoBean(@NotNull Long id, Long todoListId, String content,
-            boolean state, int serialNumber, Long createTime, Long createUser) {
+    @Generated(hash = 17955795)
+    public TodoBean(Long id, Long todoListId, String content, boolean state,
+            int serialNumber, Long createTime, Long createUser) {
         this.id = id;
         this.todoListId = todoListId;
         this.content = content;
