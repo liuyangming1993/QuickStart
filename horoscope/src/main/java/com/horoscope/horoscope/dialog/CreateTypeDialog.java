@@ -21,6 +21,9 @@ import static com.horoscope.horoscope.constant.Constant.TYPE_TODO_LIST;
 
 public class CreateTypeDialog extends BaseDialogFragment {
     public static final String TYPE = "type";
+    private int mType;
+    private EditText mEt;
+
 
     public static CreateTypeDialog getCreateTypeDialog() {
         CreateTypeDialog dialog = new CreateTypeDialog();
@@ -31,32 +34,45 @@ public class CreateTypeDialog extends BaseDialogFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.horoscope_dialog_create_type, container, false);
-        EditText et = view.findViewById(R.id.et_name);
+        mEt = view.findViewById(R.id.et_name);
         TextView tvCancel = view.findViewById(R.id.tv_cancel);
         TextView tvCommit = view.findViewById(R.id.tv_commit);
-        et.setText("");
-        if (getArguments() != null) {
-            int type = getArguments().getInt(TYPE);
-            if (type == TYPE_DIARY) {
-                et.setHint("diary名");
+        tvCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismiss();
             }
-            if (type == TYPE_TODO_LIST) {
-                et.setHint("todoList名");
+        });
+        tvCommit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EventBus.getDefault().post(new AddTypeEvent(mEt.getText().toString(), mType));
+                dismiss();
             }
-            tvCancel.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    dismiss();
-                }
-            });
-            tvCommit.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    EventBus.getDefault().post(new AddTypeEvent(et.getText().toString(), type));
-                    dismiss();
-                }
-            });
-        }
+        });
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        refreshArguments();
+        setEtHint();
+    }
+
+    private void refreshArguments(){
+        if (getArguments() != null) {
+            mType = getArguments().getInt(TYPE);
+        }
+    }
+
+    private void setEtHint() {
+        mEt.setText("");
+        if (mType == TYPE_DIARY) {
+            mEt.setHint("diary名");
+        }
+        if (mType == TYPE_TODO_LIST) {
+            mEt.setHint("todoList名");
+        }
     }
 }
