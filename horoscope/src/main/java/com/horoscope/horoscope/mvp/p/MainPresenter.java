@@ -1,6 +1,5 @@
 package com.horoscope.horoscope.mvp.p;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 
 import com.horoscope.horoscope.entity.DiaryBean;
@@ -13,11 +12,7 @@ import com.quickstart.baselib.util.SharedPreferencesHelper;
 
 import java.util.List;
 
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
-
-import static com.horoscope.horoscope.Constant.SP_FIRST_LAUNCH;
+import static com.horoscope.horoscope.constant.Constant.SP_FIRST_LAUNCH;
 
 
 public class MainPresenter extends BasePresenter<MainContract.MainView, MainContract.MainModel> {

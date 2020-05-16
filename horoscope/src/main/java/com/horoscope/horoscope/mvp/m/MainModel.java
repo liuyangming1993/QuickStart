@@ -2,7 +2,6 @@ package com.horoscope.horoscope.mvp.m;
 
 import android.content.Context;
 
-import com.horoscope.horoscope.Constant;
 import com.horoscope.horoscope.entity.DiaryBean;
 import com.horoscope.horoscope.entity.DiaryBeanDao;
 import com.horoscope.horoscope.entity.TodoListBean;
@@ -20,9 +19,9 @@ import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 
-import static com.horoscope.horoscope.Constant.Default.BIRTHDAY;
-import static com.horoscope.horoscope.Constant.Default.NICKNAME;
-import static com.horoscope.horoscope.Constant.Default.USER_ID;
+import static com.horoscope.horoscope.constant.Constant.Default.BIRTHDAY;
+import static com.horoscope.horoscope.constant.Constant.Default.NICKNAME;
+import static com.horoscope.horoscope.constant.Constant.Default.USER_ID;
 
 public class MainModel extends BaseModel implements MainContract.MainModel {
     @Override

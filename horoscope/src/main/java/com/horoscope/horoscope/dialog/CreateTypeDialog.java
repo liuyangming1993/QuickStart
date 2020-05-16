@@ -16,8 +16,8 @@ import com.quickstart.baselib.base.BaseDialogFragment;
 
 import org.greenrobot.eventbus.EventBus;
 
-import static com.horoscope.horoscope.Constant.TYPE_DIARY;
-import static com.horoscope.horoscope.Constant.TYPE_TODO_LIST;
+import static com.horoscope.horoscope.constant.Constant.TYPE_DIARY;
+import static com.horoscope.horoscope.constant.Constant.TYPE_TODO_LIST;
 
 public class CreateTypeDialog extends BaseDialogFragment {
     public static final String TYPE = "type";
@@ -34,6 +34,7 @@ public class CreateTypeDialog extends BaseDialogFragment {
         EditText et = view.findViewById(R.id.et_name);
         TextView tvCancel = view.findViewById(R.id.tv_cancel);
         TextView tvCommit = view.findViewById(R.id.tv_commit);
+        et.setText("");
         if (getArguments() != null) {
             int type = getArguments().getInt(TYPE);
             if (type == TYPE_DIARY) {

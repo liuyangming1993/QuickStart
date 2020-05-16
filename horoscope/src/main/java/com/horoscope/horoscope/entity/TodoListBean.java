@@ -14,6 +14,10 @@ public class TodoListBean {
      */
     private String title;
     /**
+     * 主题地址
+     */
+    private String themeUrl;
+    /**
      * 创建时刻
      */
     private Long createTime;
@@ -21,10 +25,12 @@ public class TodoListBean {
      * 创建人
      */
     private Long createUser;
-    @Generated(hash = 290215795)
-    public TodoListBean(Long id, String title, Long createTime, Long createUser) {
+    @Generated(hash = 1486170287)
+    public TodoListBean(Long id, String title, String themeUrl, Long createTime,
+            Long createUser) {
         this.id = id;
         this.title = title;
+        this.themeUrl = themeUrl;
         this.createTime = createTime;
         this.createUser = createUser;
     }
@@ -42,6 +48,12 @@ public class TodoListBean {
     }
     public void setTitle(String title) {
         this.title = title;
+    }
+    public String getThemeUrl() {
+        return this.themeUrl;
+    }
+    public void setThemeUrl(String themeUrl) {
+        this.themeUrl = themeUrl;
     }
     public Long getCreateTime() {
         return this.createTime;

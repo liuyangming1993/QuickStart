@@ -1,4 +1,4 @@
-package com.horoscope.horoscope;
+package com.horoscope.horoscope.constant;
 
 public class Constant {
     public static final String SP_FIRST_LAUNCH = "sp_first_launch";

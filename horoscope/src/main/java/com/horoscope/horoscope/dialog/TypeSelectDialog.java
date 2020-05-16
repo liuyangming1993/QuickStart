@@ -15,8 +15,8 @@ import com.quickstart.baselib.base.BaseDialogFragment;
 
 import org.greenrobot.eventbus.EventBus;
 
-import static com.horoscope.horoscope.Constant.TYPE_DIARY;
-import static com.horoscope.horoscope.Constant.TYPE_TODO_LIST;
+import static com.horoscope.horoscope.constant.Constant.TYPE_DIARY;
+import static com.horoscope.horoscope.constant.Constant.TYPE_TODO_LIST;
 
 public class TypeSelectDialog extends BaseDialogFragment {
     public static TypeSelectDialog getTypeSelectDialog() {

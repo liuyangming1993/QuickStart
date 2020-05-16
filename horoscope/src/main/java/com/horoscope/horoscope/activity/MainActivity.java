@@ -1,4 +1,4 @@
-package com.horoscope.horoscope;
+package com.horoscope.horoscope.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +9,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.horoscope.horoscope.R;
+import com.horoscope.horoscope.R2;
 import com.horoscope.horoscope.adapter.MainDiaryAdapter;
 import com.horoscope.horoscope.adapter.MainTodoListAdapter;
 import com.horoscope.horoscope.dialog.CreateTypeDialog;
@@ -31,8 +33,8 @@ import java.util.List;
 
 import butterknife.BindView;
 
-import static com.horoscope.horoscope.Constant.TYPE_DIARY;
-import static com.horoscope.horoscope.Constant.TYPE_TODO_LIST;
+import static com.horoscope.horoscope.constant.Constant.TYPE_DIARY;
+import static com.horoscope.horoscope.constant.Constant.TYPE_TODO_LIST;
 
 public class MainActivity extends BaseActivity<MainPresenter> implements MainContract.MainView {
 

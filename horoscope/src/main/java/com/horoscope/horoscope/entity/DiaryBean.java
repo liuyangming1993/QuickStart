@@ -13,6 +13,10 @@ public class DiaryBean {
      */
     private String diaryName;
     /**
+     * 主题地址
+     */
+    private String themeUrl;
+    /**
      * 创建时刻
      */
     private Long createTime;
@@ -20,10 +24,12 @@ public class DiaryBean {
      * 创建人
      */
     private Long createUser;
-    @Generated(hash = 932956024)
-    public DiaryBean(Long id, String diaryName, Long createTime, Long createUser) {
+    @Generated(hash = 1449441368)
+    public DiaryBean(Long id, String diaryName, String themeUrl, Long createTime,
+            Long createUser) {
         this.id = id;
         this.diaryName = diaryName;
+        this.themeUrl = themeUrl;
         this.createTime = createTime;
         this.createUser = createUser;
     }
@@ -41,6 +47,12 @@ public class DiaryBean {
     }
     public void setDiaryName(String diaryName) {
         this.diaryName = diaryName;
+    }
+    public String getThemeUrl() {
+        return this.themeUrl;
+    }
+    public void setThemeUrl(String themeUrl) {
+        this.themeUrl = themeUrl;
     }
     public Long getCreateTime() {
         return this.createTime;
